@@ -1,0 +1,623 @@
+{
+  "processes": [
+    {
+      "title": "Fließbohren",
+      "id": 1,
+      "isActive": true,
+      "description": "The first process",
+      "ratings": [
+        {
+          "name": "Spanbildung",
+          "score" : 4
+        },
+        {
+          "name": "Rüstzeit",
+          "score" : 3
+        },
+        {
+          "name": "Prozesssicherheit",
+          "score" : 4
+        },
+        {
+          "name": "Automatisierbarkeit",
+          "score" : 4
+        },
+        {
+          "name": "Geschwindigkeit",
+          "score" : 4
+        },
+        {
+          "name": "Krafteinleitung",
+          "score" : 4
+        },
+        {
+          "name": "Fremdelemente",
+          "score" : 4
+        },
+        {
+          "name": "Materialvielfalt",
+          "score" : 3
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score" : 4
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score" : 2
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score" : 1
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score" : 2
+        },
+        {
+          "name": "Gewindebelastbarkeit",
+          "score" : 4
+        },
+        {
+          "name": "Platzbedarf",
+          "score" : 4
+        },
+        {
+          "name": "Massekosten",
+          "score" : 3
+        },
+        {
+          "name": "Vorarbeit",
+          "score" : 4
+        },
+        {
+          "name": "Positioniergenauigkeit",
+          "score" : 3
+        },
+        {
+          "name": "Toleranzen",
+          "score" : 4
+        },
+        {
+          "name": "Qualitätskontrolle",
+          "score" : 4
+        }      
+      ]
+    },
+    {
+      "title": "Pressmutter",
+      "id": 2,
+      "isActive": true,
+      "description": "The first process",
+      "ratings": [
+        {
+          "name": "Spanbildung",
+          "score" : 2
+        },
+        {
+          "name": "Rüstzeit",
+          "score" : 3
+        },
+        {
+          "name": "Prozesssicherheit",
+          "score" : 2
+        },
+        {
+          "name": "Automatisierbarkeit",
+          "score" : 4
+        },
+        {
+          "name": "Geschwindigkeit",
+          "score" : 1
+        },
+        {
+          "name": "Krafteinleitung",
+          "score" : 2
+        },
+        {
+          "name": "Fremdelemente",
+          "score" : 3
+        },
+        {
+          "name": "Materialvielfalt",
+          "score" : 1
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score" : 2
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score" : 4
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score" : 2
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score" : 3
+        },
+        {
+          "name": "Gewindebelastbarkeit",
+          "score" : 1
+        },
+        {
+          "name": "Platzbedarf",
+          "score" : 3
+        },
+        {
+          "name": "Massekosten",
+          "score" : 3
+        },
+        {
+          "name": "Vorarbeit",
+          "score" : 1
+        },
+        {
+          "name": "Positioniergenauigkeit",
+          "score" : 2
+        },
+        {
+          "name": "Toleranzen",
+          "score" : 4
+        },
+        {
+          "name": "Qualitätskontrolle",
+          "score" : 5
+        }
+      ]
+    },
+    {
+      "title": "Schweißmutter",
+      "id": 3,
+      "isActive": true,
+      "description": "The first process",
+      "ratings": [
+        {
+          "name": "Spanbildung",
+          "score" : 4
+        },
+        {
+          "name": "Rüstzeit",
+          "score" : 3
+        },
+        {
+          "name": "Prozesssicherheit",
+          "score" : 2
+        },
+        {
+          "name": "Automatisierbarkeit",
+          "score" : 2
+        },
+        {
+          "name": "Geschwindigkeit",
+          "score" : 1
+        },
+        {
+          "name": "Krafteinleitung",
+          "score" : 3
+        },
+        {
+          "name": "Fremdelemente",
+          "score" : 1
+        },
+        {
+          "name": "Materialvielfalt",
+          "score" : 2
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score" : 1
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score" : 1
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score" : 4
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score" : 3
+        },
+        {
+          "name": "Gewindebelastbarkeit",
+          "score" : 1
+        },
+        {
+          "name": "Platzbedarf",
+          "score" : 2
+        },
+        {
+          "name": "Massekosten",
+          "score" : 1
+        },
+        {
+          "name": "Vorarbeit",
+          "score" : 1
+        },
+        {
+          "name": "Positioniergenauigkeit",
+          "score" : 1
+        },
+        {
+          "name": "Toleranzen",
+          "score" : 2
+        },
+        {
+          "name": "Qualitätskontrolle",
+          "score" : 1
+        }
+      ]
+    },
+    {
+      "title": "Buckelschweißmuttern",
+      "id": 4,
+      "isActive": true,
+      "description": "The first process",
+      "ratings": [
+        {
+          "name": "Spanbildung",
+          "score" : 1
+        },
+        {
+          "name": "Rüstzeit",
+          "score" : 2
+        },
+        {
+          "name": "Prozesssicherheit",
+          "score" : 3
+        },
+        {
+          "name": "Automatisierbarkeit",
+          "score" : 4
+        },
+        {
+          "name": "Geschwindigkeit",
+          "score" : 1
+        },
+        {
+          "name": "Krafteinleitung",
+          "score" : 2
+        },
+        {
+          "name": "Fremdelemente",
+          "score" : 3
+        },
+        {
+          "name": "Materialvielfalt",
+          "score" : 4
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score" : 1
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score" : 2
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score" : 3
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score" : 3
+        },
+        {
+          "name": "Gewindebelastbarkeit",
+          "score" : 2
+        },
+        {
+          "name": "Platzbedarf",
+          "score" : 1
+        },
+        {
+          "name": "Massekosten",
+          "score" : 1
+        },
+        {
+          "name": "Vorarbeit",
+          "score" : 1
+        },
+        {
+          "name": "Positioniergenauigkeit",
+          "score" : 1
+        },
+        {
+          "name": "Toleranzen",
+          "score" : 1
+        },
+        {
+          "name": "Qualitätskontrolle",
+          "score" : 4
+        }     
+      ]
+    },    {
+      "title": "Blindnietmuttern",
+      "id": 5,
+      "isActive": true,
+      "description": "The first process",
+      "ratings": [
+        {
+          "name": "Spanbildung",
+          "score" : 2
+        },
+        {
+          "name": "Rüstzeit",
+          "score" : 2
+        },
+        {
+          "name": "Prozesssicherheit",
+          "score" : 1
+        },
+        {
+          "name": "Automatisierbarkeit",
+          "score" : 2
+        },
+        {
+          "name": "Geschwindigkeit",
+          "score" : 2
+        },
+        {
+          "name": "Krafteinleitung",
+          "score" : 2
+        },
+        {
+          "name": "Fremdelemente",
+          "score" : 1
+        },
+        {
+          "name": "Materialvielfalt",
+          "score" : 4
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score" : 3
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score" : 4
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score" : 3
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score" : 4
+        },
+        {
+          "name": "Gewindebelastbarkeit",
+          "score" : 1
+        },
+        {
+          "name": "Platzbedarf",
+          "score" : 2
+        },
+        {
+          "name": "Massekosten",
+          "score" : 3
+        },
+        {
+          "name": "Vorarbeit",
+          "score" : 4
+        },
+        {
+          "name": "Positioniergenauigkeit",
+          "score" : 2
+        },
+        {
+          "name": "Toleranzen",
+          "score" : 3
+        },
+        {
+          "name": "Qualitätskontrolle",
+          "score" : 4
+        }
+      ]
+    },
+    {
+      "title": "Gewindeschneiden",
+      "id": 6,
+      "isActive": true,
+      "description": "The first process",
+      "ratings": [
+        {
+          "name": "Spanbildung",
+          "score" : 1
+        },
+        {
+          "name": "Rüstzeit",
+          "score" : 2
+        },
+        {
+          "name": "Prozesssicherheit",
+          "score" : 3
+        },
+        {
+          "name": "Automatisierbarkeit",
+          "score" : 3
+        },
+        {
+          "name": "Geschwindigkeit",
+          "score" : 3
+        },
+        {
+          "name": "Krafteinleitung",
+          "score" : 1
+        },
+        {
+          "name": "Fremdelemente",
+          "score" : 4
+        },
+        {
+          "name": "Materialvielfalt",
+          "score" : 4
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score" : 4
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score" : 3
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score" : 2
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score" : 3
+        },
+        {
+          "name": "Gewindebelastbarkeit",
+          "score" : 1
+        },
+        {
+          "name": "Platzbedarf",
+          "score" : 2
+        },
+        {
+          "name": "Massekosten",
+          "score" : 3
+        },
+        {
+          "name": "Vorarbeit",
+          "score" : 2
+        },
+        {
+          "name": "Positioniergenauigkeit",
+          "score" : 2
+        },
+        {
+          "name": "Toleranzen",
+          "score" : 1
+        },
+        {
+          "name": "Qualitätskontrolle",
+          "score" : 1
+        }       
+      ]
+    }                      
+  ],
+  "weights": [
+    {
+      "id": 1,
+      "name": "Spanbildung",
+      "weight": 1,
+      "description": "Die Bildung von Spänen während des Bearbeitungsprozesses."
+    },
+    {
+      "id": 2,
+      "name": "Rüstzeit",
+      "weight": 2,
+      "description": "Die Zeit, die benötigt wird, um die Maschine für die Bearbeitung vorzubereiten."
+    },
+    {
+      "id": 3,
+      "name": "Prozesssicherheit",
+      "weight": 4,
+      "description": "Die Verlässlichkeit des Bearbeitungsprozesses, um Fertigungsfehler zu vermeiden."
+    },
+    {
+      "id": 4,
+      "name": "Automatisierbarkeit",
+      "weight": 4,
+      "description": "Die Fähigkeit, den Bearbeitungsprozess zu automatisieren, um Effizienz zu steigern und Kosten zu senken."
+    },
+    {
+      "id": 5,
+      "name": "Geschwindigkeit",
+      "weight": 4,
+      "description": "Die Geschwindigkeit, mit der der Bearbeitungsprozess durchgeführt wird."
+    },
+    {
+      "id": 6,
+      "name": "Krafteinleitung",
+      "weight": 3,
+      "description": "Die Art und Weise, wie die Bearbeitungskräfte auf das Werkstück übertragen werden."
+    },
+    {
+      "id": 7,
+      "name": "Fremdelemente",
+      "weight": 2,
+      "description": "Die Notwendigkeit und der Kosteneinfluss, der durch Zusatzelemente entsteht (Muttern, Schweißmittel etc)."
+    },
+    {
+      "id": 8,
+      "name": "Materialvielfalt",
+      "weight": 1,
+      "description": "Die Vielfalt der Materialien, die bearbeitet werden können."
+    },
+    {
+      "id": 9,
+      "name": "Oberflächenqualität",
+      "weight": 1,
+      "description": "Die Qualität der bearbeiteten Oberfläche des Werkstücks."
+    },
+    {
+      "id": 10,
+      "name": "Wärmeeinleitung",
+      "weight": 1,
+      "description": "Wie viel Wärme wird in das Werkstück eingeleitet (weniger Wärme -> höhere Wertung)."
+    },
+    {
+      "id": 11,
+      "name": "Werkstückfixierung",
+      "weight": 1,
+      "description": "Wie gut das Werkstück fixiert werden muss"
+    },
+    {
+      "id": 12,
+      "name": "Mobiler Einsatz",
+      "weight": 2,
+      "description": "Die Möglichkeit, den Prozess mobil einzusetzen."
+    },
+    {
+      "id": 13,
+      "name": "Gewindebelastbarkeit",
+      "weight": 3,
+      "description": "Die Fähigkeit, Gewinde mit hoher Belastbarkeit herzustellen."
+    },
+    {
+      "id": 14,
+      "name": "Platzbedarf",
+      "weight": 2,
+      "description": "Der benötigte Raum für die Aufstellung der Bearbeitungsmaschine."
+    },
+    {
+      "id": 15,
+      "name": "Massekosten",
+      "weight": 1,
+      "description": "Die Masse, die durch den Prozess dem Werkstück hinzugefügt wird."
+    },
+    {
+      "id": 16,
+      "name": "Vorarbeit",
+      "weight": 3,
+      "description": "Die Menge an Vorarbeiten, die vor dem eigentlichen Bearbeitungsprozess erforderlich sind."
+    },
+    {
+      "id": 17,
+      "name": "Positioniergenauigkeit",
+      "weight": 2,
+      "description": "Die Genauigkeit, mit der das Gewinde positioniert wird."
+    },
+    {
+      "id": 18,
+      "name": "Toleranzen",
+      "weight": 2,
+      "description": "Die Einhaltbarkeit der von zulässigen Abweichungen von den vorgegebenen Maßen."
+    },
+    {
+      "id": 19,
+      "name": "Qualitätskontrolle",
+      "weight": 2,
+      "description": "Nötiger Prüfaufwand, um das Werkstück abnehmen zu können."
+    }
+  ]
+}
