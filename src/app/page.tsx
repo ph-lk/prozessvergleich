@@ -16,6 +16,15 @@ import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch"
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { ResponsivePie } from '@nivo/pie'
@@ -25,11 +34,15 @@ import { ResultTable } from "./result-table/result-table";
 import { ProcessResult, columns } from "./result-table/result-columns";
 import { ReceiptEuro, RemoveFormatting, RemoveFormattingIcon } from 'lucide-react';
 import { useState, useEffect } from "react";
-import { ProcessData, Weight } from "./types";
+import { ProcessData, Weight, Rating } from "./types";
+
+import { useSearchParams } from 'next/navigation'
 
 export default function Home() {
-  // TODO add priority import -> url -> default data
-  const [comparisonData, setComparisonData] = useState<ProcessData>(defaultComparisonValues)
+  const searchParams = useSearchParams()
+  const importData = searchParams.get('data')
+
+  const [comparisonData, setComparisonData] = useState<ProcessData>(importData || defaultComparisonValues)
   const [processResults, setProcessResults] = useState<ProcessResult[]>();
   const [weightSliderValues, setWeightSliderValues] = useState<number[]>();
   const [maxWeight, setMaxWeight] = useState<number>(5);
@@ -67,6 +80,28 @@ export default function Home() {
     console.log(`Changed weight ${weightId} to ${weight}`);
   }
 
+  const handleRatingChange = (processId: number, ratingName: string, scoreStr: string) => {
+    const score : number = parseFloat(scoreStr);
+    if (isNaN(score)) return;
+
+    const updatedProcesses = comparisonData.processes.map(oldProcess => {
+      if (oldProcess.id === processId) {
+        return { ...oldProcess, ratings: oldProcess.ratings.map(oldRating => {
+            if (oldRating.name === ratingName) {
+              return {...oldRating, score: score };
+            }
+            return oldRating;
+        })}
+      }
+      return oldProcess;
+    });
+
+    setComparisonData(prevData => ({
+      ...prevData,
+      processes: updatedProcesses
+    }));
+  }
+
   // updating the calculations for the charts & update ui elements
   useEffect(() => {
     setWeightSliderValues(() => {
@@ -94,7 +129,7 @@ export default function Home() {
           if (!weight) throw new Error(`Error while analyzing data. Process "${process.title}" had rating for "${rating.name}" that was not found in weights. Check if the ratings and weights are correct.`)
           weightedScore += rating.score * weight.weight;
         }
-        return weightedScore;
+        return +(weightedScore.toFixed(2));
       });
       const totalWeight = comparisonData.weights.reduce((acc, curVal) => acc + curVal.weight, 0);
       const weightNormalizedScore = weighted.map((score) => +((score / totalWeight).toFixed(2)));
@@ -228,7 +263,6 @@ export default function Home() {
                 </CardContent>
                 <CardFooter className="flex justify-between">
                   <Slider 
-                    id={`weight-slider-${weight.id}`}
                     min={0} 
                     max={maxWeight}
                     step={0.2}
@@ -237,7 +271,6 @@ export default function Home() {
                     style={{ marginRight: "10%"}}
                   />
                   <Input
-                    id={`weight-input-${weight.id}`}
                     type="number"
                     min={0}
                     step={0.2}
@@ -255,10 +288,77 @@ export default function Home() {
           </div>
         </TabsContent>
         <TabsContent value="rating" className="p-8">
-          Hello
+          <Table>
+            <TableCaption>Zusammenfassung der Bewertungen</TableCaption>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="w-[100px]">Kriterium</TableHead>
+                { comparisonData.processes
+                    .filter((process) => process.isActive)
+                    .map((process) => (
+                      <TableHead>
+                        {process.title}
+                      </TableHead>
+                    ))
+                }
+                {/*<TableHead className="text-right">Amount</TableHead>*/}
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              { comparisonData.weights
+                  .map((weight) => (
+                    <TableRow>
+                      <TableCell>{weight.name}</TableCell>
+                      { comparisonData.processes
+                          .filter((process) => process.isActive)
+                          .map((process) => {
+                            const rating : Rating = process.ratings.find((rating) => rating.name === weight.name);
+                            return <TableCell>
+                              <Input
+                                type="number"
+                                min={0}
+                                step={0.2}
+                                value={rating.score}
+                                onChange={(inputEvent) => handleRatingChange(process.id, rating.name, inputEvent.target.value)}
+                                style={{ width: "100%"}}
+                              />
+                            </TableCell>;
+                        })
+                      }
+                    </TableRow>
+                  ))
+              }
+            </TableBody>
+          </Table>
         </TabsContent>
         <TabsContent value="importExport" className="p-8">
-          
+          <div className="grid grid-cols-2 gap-8 mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle>Import</CardTitle>
+                <CardDescription>Description</CardDescription>
+              </CardHeader>
+              <CardContent>
+                Content
+              </CardContent>
+              <CardFooter>
+                Footer
+                Right
+              </CardFooter>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Export</CardTitle>
+                <CardDescription>Diese URL enthällt den aktuellen Stand der Anwendung.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Input
+                  type="url"
+                  value="asdf"
+                />
+              </CardContent>
+            </Card>
+          </div>
         </TabsContent>
         <TabsContent value="results" className="p-8">
           <div className="w-full h-[600px]">
