@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch"
@@ -28,23 +29,57 @@ export default function Home() {
   // TODO add priority import -> url -> default data
   const [comparisonData, setComparisonData] = useState<ProcessData>(defaultComparisonValues)
   const [processResults, setProcessResults] = useState<ProcessResult[]>();
+  const [weightSliderValues, setWeightSliderValues] = useState<number[]>();
+  const [maxWeight, setMaxWeight] = useState<number>(5);
 
   const handleActiveSwitch = (processId: number, isActive: boolean) => {
     const updatedProcesses = comparisonData.processes.map(process => {
       if (process.id === processId) {
-        return { ...process, isActive };
+        return { ...process, isActive: isActive };
       }
       return process;
     });
 
-    setComparisonData(prevData =>  ({
+    setComparisonData(prevData => ({
       ...prevData,
       processes: updatedProcesses
     }));
   };
 
-  // updating the calculations for the charts
+  const handleWeightChange = (weightId: number, weightStr: string) => {
+    const weight : number = parseFloat(weightStr);
+    if (isNaN(weight)) return;
+
+    const updatedWeights = comparisonData.weights.map(oldWeight => {
+      if (oldWeight.id === weightId) {
+        return { ...oldWeight, weight: weight };
+      }
+      return oldWeight;
+    });
+
+    setComparisonData(prevData => ({
+      ...prevData,
+      weights: updatedWeights
+    }));
+
+    console.log(`Changed weight ${weightId} to ${weight}`);
+  }
+
+  // updating the calculations for the charts & update ui elements
   useEffect(() => {
+    setWeightSliderValues(() => {
+      const weights : number[] = [];
+      for (const weight of comparisonData.weights) {
+        weights[weight.id] = weight.weight;
+      }
+      return weights;
+    });
+
+    const newLargestWeight = comparisonData.weights.reduce((maxWeight, weight) => {
+      return weight.weight > maxWeight ? weight.weight : maxWeight;
+    }, Number.NEGATIVE_INFINITY);
+    if (maxWeight != newLargestWeight) setMaxWeight(newLargestWeight);
+
     setProcessResults(() => {
       const activeProcesses = comparisonData.processes.filter(process => process.isActive)
       const ids = activeProcesses.map(process => process.id);
@@ -122,11 +157,28 @@ export default function Home() {
                     <CardDescription>ID: {weight.id}</CardDescription>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent style={{ height: "100%"}}>
                   <p>{weight.description}</p>
                 </CardContent>
                 <CardFooter className="flex justify-between">
-                  <Slider defaultValue={[weight.weight]} max={5} step={0.2} />
+                  <Slider 
+                    id={`weight-slider-${weight.id}`}
+                    min={0} 
+                    max={maxWeight}
+                    step={0.2}
+                    value={weightSliderValues?.[weight.id] ? [weightSliderValues[weight.id]] : [0]}
+                    onValueChange={(value : number[]) => handleWeightChange(weight.id, `${value[0]}`)}
+                    style={{ marginRight: "10%"}}
+                  />
+                  <Input
+                    id={`weight-input-${weight.id}`}
+                    type="number"
+                    min={0}
+                    step={0.2}
+                    value={weightSliderValues?.[weight.id] ? [`${weightSliderValues[weight.id]}`] : ["0"]}
+                    onChange={(inputEvent) => handleWeightChange(weight.id, inputEvent.target.value)}
+                    style={{ width: "30%"}}
+                  />
                 </CardFooter>
               </Card>
             ))}
