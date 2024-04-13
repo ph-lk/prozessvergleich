@@ -29,6 +29,21 @@ export default function Home() {
   const [comparisonData, setComparisonData] = useState<ProcessData>(defaultComparisonValues)
   const [processResults, setProcessResults] = useState<ProcessResult[]>();
 
+  const handleActiveSwitch = (processId: number, isActive: boolean) => {
+    const updatedProcesses = comparisonData.processes.map(process => {
+      if (process.id === processId) {
+        return { ...process, isActive };
+      }
+      return process;
+    });
+
+    setComparisonData(prevData =>  ({
+      ...prevData,
+      processes: updatedProcesses
+    }));
+  };
+
+  // updating the calculations for the charts
   useEffect(() => {
     setProcessResults(() => {
       const activeProcesses = comparisonData.processes.filter(process => process.isActive)
@@ -39,7 +54,7 @@ export default function Home() {
         let weightedScore = 0;
         for (const rating of process.ratings) {
           const weight = comparisonData.weights.find((weight) => weight.name === rating.name)
-          if (!weight) throw new Error(`Error while analyzing data. Process "${process.title}" had rating for "${rating.name}" that was not found in weights.`)
+          if (!weight) throw new Error(`Error while analyzing data. Process "${process.title}" had rating for "${rating.name}" that was not found in weights. Check if the ratings and weights are correct.`)
           weightedScore += rating.score * weight.weight;
         }
         return weightedScore;
@@ -58,6 +73,8 @@ export default function Home() {
       }
       return results
     });
+
+    // TODO update charts?
   }, [comparisonData]);
 
 
@@ -87,9 +104,9 @@ export default function Home() {
                 <CardFooter className="flex justify-between">
                   <Switch
                     checked={process.isActive}
-                    onCheckedChange={}
+                    onCheckedChange={(isChecked) => handleActiveSwitch(process.id, isChecked)}
                   />
-                  {process.isActive && <p>active</p> || <p>inactive</p>}
+                  {process.isActive && <p>Aktiv, wird verglichen</p> || <p>Inaktiv, wird nicht verglichen</p>}
                 </CardFooter>
               </Card>
             ))}
@@ -102,7 +119,7 @@ export default function Home() {
                 <CardHeader className="flex-row gap-4 items-center">
                   <div>
                     <CardTitle>{weight.name}</CardTitle>
-                    <CardDescription>{weight.id}</CardDescription>
+                    <CardDescription>ID: {weight.id}</CardDescription>
                   </div>
                 </CardHeader>
                 <CardContent>
