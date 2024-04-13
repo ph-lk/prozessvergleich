@@ -18,12 +18,14 @@ import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import { ResponsivePie } from '@nivo/pie'
+
 import defaultComparisonValues from "../../public/data/defaults.json";
 import { ResultTable } from "./result-table/result-table";
 import { ProcessResult, columns } from "./result-table/result-columns";
 import { ReceiptEuro, RemoveFormatting, RemoveFormattingIcon } from 'lucide-react';
 import { useState, useEffect } from "react";
-import ProcessData from "./types";
+import { ProcessData, Weight } from "./types";
 
 export default function Home() {
   // TODO add priority import -> url -> default data
@@ -95,7 +97,7 @@ export default function Home() {
         return weightedScore;
       });
       const totalWeight = comparisonData.weights.reduce((acc, curVal) => acc + curVal.weight, 0);
-      const weightNormalizedScore = weighted.map((score) => score / totalWeight);
+      const weightNormalizedScore = weighted.map((score) => +((score / totalWeight).toFixed(2)));
       let results : Array<ProcessResult> = [];
       for (let i = 0; i < activeProcesses.length; i++) {
         results[i] = {
@@ -111,6 +113,70 @@ export default function Home() {
 
     // TODO update charts?
   }, [comparisonData]);
+
+  const WeightingPieChart = (inputData : any) => (
+    <ResponsivePie
+        data={inputData.data.map((weight: Weight) => ({
+            id: weight.id,
+            label: weight.name,
+            value: weight.weight,
+            description: weight.description
+        }))}
+        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+        innerRadius={0.5}
+        padAngle={0.7}
+        cornerRadius={3}
+        activeOuterRadiusOffset={8}
+        colors={{ scheme: 'purple_blue' }}
+        sortByValue={true}
+        borderWidth={1}
+        borderColor={{
+            from: 'color',
+            modifiers: [
+                [
+                    'darker',
+                    0.2
+                ]
+            ]
+        }}
+        arcLinkLabel={'label'}
+        arcLinkLabelsDiagonalLength={32}
+        arcLinkLabelsStraightLength={36}
+        arcLinkLabelsSkipAngle={10}
+        arcLinkLabelsTextColor="#FFFFFF"
+        arcLinkLabelsThickness={2}
+        arcLinkLabelsColor={{ from: 'color' }}
+        arcLabelsSkipAngle={10}
+        arcLabelsTextColor={{
+            from: 'color',
+            modifiers: [
+                [
+                    'darker',
+                    2
+                ]
+            ]
+        }}
+        tooltip={ slice =>
+          {
+            const description = comparisonData.weights.find((weight : Weight) => weight.id === slice.datum.id)?.description || "";
+            return <Card style={{ width: '360px'}}>
+              <CardHeader>
+                <CardTitle>
+                  {slice.datum.label}, ID {slice.datum.id}
+                </CardTitle>
+                <CardDescription>
+                  {description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>Gewicht: {slice.datum.value}</div>
+                <div>{(slice.datum.value/comparisonData.weights.reduce((acc, curVal) => acc + curVal.weight, 0) * 100).toFixed(2) + '% des Gesamtgewichts'}</div>
+              </CardContent>
+            </Card>
+          }
+        }
+    />
+)
 
 
   return (
@@ -183,6 +249,10 @@ export default function Home() {
               </Card>
             ))}
           </div>
+          < Separator className="my-24" />
+          <div className="col-span-3" style={{ height: '90vh', width: '90vw' }}>
+            { processResults ? <WeightingPieChart data={comparisonData.weights} /> : <></> }
+          </div>
         </TabsContent>
         <TabsContent value="rating" className="p-8">
           Hello
@@ -192,7 +262,7 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="results" className="p-8">
           <div className="w-full h-[600px]">
-            <ResultTable columns={columns} data={processResults} />
+            <ResultTable variant={"surface"} columns={columns} data={processResults} />
           </div>  
         </TabsContent>
       </Tabs>
