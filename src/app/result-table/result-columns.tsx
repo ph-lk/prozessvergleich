@@ -10,6 +10,7 @@ export type ProcessResult = {
     name: string;
     scoreUnweighted: number;
     scoreWeighted: number;
+    weightNormalizedScore: number;
   }
 
 export const columns: ColumnDef<ProcessResult>[] = [
