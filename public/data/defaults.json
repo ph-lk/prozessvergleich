@@ -6,79 +6,79 @@
       "isActive": true,
       "description": "Das Fließbohren ist ein nicht spanender Prozess zum Schaffen von Löchern in dünnwandigem Material. Ein konischer Fließbohrer rotiert und wird axial auf das Werkstück gepresst. Hierbei entstehen Temperaturen von etwa 900° C. Das erweichte Material wird verdrängt und bildet eine Wulst. In diese kann anschließend ein Gewinde eingeformt werden.",
       "ratings": [
-        { 
+        {
           "name": "Automatisierbarkeit",
-          "score": 16
+          "score": 4
         },
-        { 
+        {
           "name": "Fremdelemente",
-          "score": 8
+          "score": 4
         },
-        { 
+        {
           "name": "Geschwindigkeit",
-          "score": 16
+          "score": 4
         },
-        { 
+        {
           "name": "Gewindebelastbarkeit",
-          "score": 12
+          "score": 4
         },
-        { 
+        {
           "name": "Krafteinleitung",
-          "score": 12
+          "score": 4
         },
-        { 
+        {
           "name": "Massekosten",
-          "score": 8
+          "score": 4
         },
-        { 
+        {
           "name": "Materialvielfalt",
           "score": 2
         },
-        { 
+        {
           "name": "Mobiler Einsatz",
           "score": 2
         },
-        { 
+        {
           "name": "Oberflächenqualität",
-          "score": 12
+          "score": 4
         },
-        { 
+        {
           "name": "Platzbedarf",
-          "score": 8
+          "score": 4
         },
-        { 
+        {
           "name": "Positioniergenauigkeit",
-          "score": 9
+          "score": 3
         },
-        { 
+        {
           "name": "Prozesssicherheit",
-          "score": 16
+          "score": 4
         },
-        { 
+        {
           "name": "Qualitätskontrolle",
-          "score": 12
+          "score": 4
         },
-        { 
+        {
           "name": "Rüstzeit",
-          "score": 6
+          "score": 3
         },
-        { 
+        {
           "name": "Spanbildung",
           "score": 4
         },
-        { 
+        {
           "name": "Toleranzen",
-          "score": 16
-        },
-        { 
-          "name": "Vorarbeit",
-          "score": 12
-        },
-        { 
-          "name": "Wärmeeinleitung",
           "score": 4
         },
-        { 
+        {
+          "name": "Vorarbeit",
+          "score": 4
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score": 2
+        },
+        {
           "name": "Werkstückfixierung",
           "score": 1
         }
