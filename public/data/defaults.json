@@ -4,167 +4,167 @@
       "title": "Fließbohren",
       "id": 1,
       "isActive": true,
-      "description": "The first process",
+      "description": "Das Fließbohren ist ein nicht spanender Prozess zum Schaffen von Löchern in dünnwandigem Material. Ein konischer Fließbohrer rotiert und wird axial auf das Werkstück gepresst. Hierbei entstehen Temperaturen von etwa 900° C. Das erweichte Material wird verdrängt und bildet eine Wulst. In diese kann anschließend ein Gewinde eingeformt werden.",
       "ratings": [
-        {
-          "name": "Spanbildung",
-          "score" : 4
-        },
-        {
-          "name": "Rüstzeit",
-          "score" : 3
-        },
-        {
-          "name": "Prozesssicherheit",
-          "score" : 4
-        },
-        {
+        { 
           "name": "Automatisierbarkeit",
-          "score" : 4
+          "score": 16
         },
-        {
-          "name": "Geschwindigkeit",
-          "score" : 4
-        },
-        {
-          "name": "Krafteinleitung",
-          "score" : 4
-        },
-        {
+        { 
           "name": "Fremdelemente",
-          "score" : 4
+          "score": 8
         },
-        {
-          "name": "Materialvielfalt",
-          "score" : 3
+        { 
+          "name": "Geschwindigkeit",
+          "score": 16
         },
-        {
-          "name": "Oberflächenqualität",
-          "score" : 4
-        },
-        {
-          "name": "Wärmeeinleitung",
-          "score" : 2
-        },
-        {
-          "name": "Werkstückfixierung",
-          "score" : 1
-        },
-        {
-          "name": "Mobiler Einsatz",
-          "score" : 2
-        },
-        {
+        { 
           "name": "Gewindebelastbarkeit",
-          "score" : 4
+          "score": 12
         },
-        {
-          "name": "Platzbedarf",
-          "score" : 4
+        { 
+          "name": "Krafteinleitung",
+          "score": 12
         },
-        {
+        { 
           "name": "Massekosten",
-          "score" : 3
+          "score": 8
         },
-        {
-          "name": "Vorarbeit",
-          "score" : 4
+        { 
+          "name": "Materialvielfalt",
+          "score": 2
         },
-        {
+        { 
+          "name": "Mobiler Einsatz",
+          "score": 2
+        },
+        { 
+          "name": "Oberflächenqualität",
+          "score": 12
+        },
+        { 
+          "name": "Platzbedarf",
+          "score": 8
+        },
+        { 
           "name": "Positioniergenauigkeit",
-          "score" : 3
+          "score": 9
         },
-        {
-          "name": "Toleranzen",
-          "score" : 4
+        { 
+          "name": "Prozesssicherheit",
+          "score": 16
         },
-        {
+        { 
           "name": "Qualitätskontrolle",
-          "score" : 4
-        }      
+          "score": 12
+        },
+        { 
+          "name": "Rüstzeit",
+          "score": 6
+        },
+        { 
+          "name": "Spanbildung",
+          "score": 4
+        },
+        { 
+          "name": "Toleranzen",
+          "score": 16
+        },
+        { 
+          "name": "Vorarbeit",
+          "score": 12
+        },
+        { 
+          "name": "Wärmeeinleitung",
+          "score": 4
+        },
+        { 
+          "name": "Werkstückfixierung",
+          "score": 1
+        }
       ]
     },
     {
-      "title": "Pressmutter",
+      "title": "Pressmuttern",
       "id": 2,
       "isActive": true,
-      "description": "The first process",
+      "description": "Pressmuttern oder auch Einpressmuttern sind Befestigungselemente mit einem Gewinde. Sie verfügen über eine Rändelung und eine Nut. Sie werden entweder in eine verkleinerte Öffnung gepresst oder sind selbstschneidend und können direkt auf das Blech gepresst werden. Ihre Anwendung ist jedoch fast ausschließlich auf flaches Blech beschränk.",
       "ratings": [
         {
-          "name": "Spanbildung",
-          "score" : 2
-        },
-        {
-          "name": "Rüstzeit",
-          "score" : 3
-        },
-        {
-          "name": "Prozesssicherheit",
-          "score" : 2
-        },
-        {
           "name": "Automatisierbarkeit",
-          "score" : 4
-        },
-        {
-          "name": "Geschwindigkeit",
-          "score" : 1
-        },
-        {
-          "name": "Krafteinleitung",
-          "score" : 2
+          "score": 2
         },
         {
           "name": "Fremdelemente",
-          "score" : 3
+          "score": 1
         },
         {
-          "name": "Materialvielfalt",
-          "score" : 1
-        },
-        {
-          "name": "Oberflächenqualität",
-          "score" : 2
-        },
-        {
-          "name": "Wärmeeinleitung",
-          "score" : 4
-        },
-        {
-          "name": "Werkstückfixierung",
-          "score" : 2
-        },
-        {
-          "name": "Mobiler Einsatz",
-          "score" : 3
+          "name": "Geschwindigkeit",
+          "score": 2
         },
         {
           "name": "Gewindebelastbarkeit",
-          "score" : 1
+          "score": 3
         },
         {
-          "name": "Platzbedarf",
-          "score" : 3
+          "name": "Krafteinleitung",
+          "score": 2
         },
         {
           "name": "Massekosten",
-          "score" : 3
+          "score": 1
         },
         {
-          "name": "Vorarbeit",
-          "score" : 1
+          "name": "Materialvielfalt",
+          "score": 1
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score": 3
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score": 2
+        },
+        {
+          "name": "Platzbedarf",
+          "score": 1
         },
         {
           "name": "Positioniergenauigkeit",
-          "score" : 2
+          "score": 2
         },
         {
-          "name": "Toleranzen",
-          "score" : 4
+          "name": "Prozesssicherheit",
+          "score": 2
         },
         {
           "name": "Qualitätskontrolle",
-          "score" : 5
+          "score": 1
+        },
+        {
+          "name": "Rüstzeit",
+          "score": 3
+        },
+        {
+          "name": "Spanbildung",
+          "score": 2
+        },
+        {
+          "name": "Toleranzen",
+          "score": 3
+        },
+        {
+          "name": "Vorarbeit",
+          "score": 2
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score": 4
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score": 4
         }
       ]
     },
@@ -172,83 +172,83 @@
       "title": "Schweißmutter",
       "id": 3,
       "isActive": true,
-      "description": "The first process",
+      "description": "Schweißmuttern haben auf der Unterseite eine Einkerbung die ermöglicht, dass Schweißmaterial eintreten kann. Die Mutter wird über ein Vorloch positioniert und dann in der Regel händisch verschweißt. Der Prozess ist kaum automatisierbar und findet vor allem bei 'Im Feld'-Anwendungen Einsatz.",
       "ratings": [
         {
-          "name": "Spanbildung",
-          "score" : 4
-        },
-        {
-          "name": "Rüstzeit",
-          "score" : 3
-        },
-        {
-          "name": "Prozesssicherheit",
-          "score" : 2
-        },
-        {
           "name": "Automatisierbarkeit",
-          "score" : 2
-        },
-        {
-          "name": "Geschwindigkeit",
-          "score" : 1
-        },
-        {
-          "name": "Krafteinleitung",
-          "score" : 3
+          "score": 1
         },
         {
           "name": "Fremdelemente",
-          "score" : 1
+          "score": 2
         },
         {
-          "name": "Materialvielfalt",
-          "score" : 2
-        },
-        {
-          "name": "Oberflächenqualität",
-          "score" : 1
-        },
-        {
-          "name": "Wärmeeinleitung",
-          "score" : 1
-        },
-        {
-          "name": "Werkstückfixierung",
-          "score" : 4
-        },
-        {
-          "name": "Mobiler Einsatz",
-          "score" : 3
+          "name": "Geschwindigkeit",
+          "score": 1
         },
         {
           "name": "Gewindebelastbarkeit",
-          "score" : 1
+          "score": 3
         },
         {
-          "name": "Platzbedarf",
-          "score" : 2
+          "name": "Krafteinleitung",
+          "score": 2
         },
         {
           "name": "Massekosten",
-          "score" : 1
+          "score": 2
         },
         {
-          "name": "Vorarbeit",
-          "score" : 1
+          "name": "Materialvielfalt",
+          "score": 2
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score": 4
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score": 3
+        },
+        {
+          "name": "Platzbedarf",
+          "score": 3
         },
         {
           "name": "Positioniergenauigkeit",
-          "score" : 1
+          "score": 1
         },
         {
-          "name": "Toleranzen",
-          "score" : 2
+          "name": "Prozesssicherheit",
+          "score": 2
         },
         {
           "name": "Qualitätskontrolle",
-          "score" : 1
+          "score": 1
+        },
+        {
+          "name": "Rüstzeit",
+          "score": 2
+        },
+        {
+          "name": "Spanbildung",
+          "score": 4
+        },
+        {
+          "name": "Toleranzen",
+          "score": 1
+        },
+        {
+          "name": "Vorarbeit",
+          "score": 2
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score": 1
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score": 3
         }
       ]
     },
@@ -256,166 +256,167 @@
       "title": "Buckelschweißmuttern",
       "id": 4,
       "isActive": true,
-      "description": "The first process",
+      "description": "Die Buckelschweißmutter wird mittels des Widerstandspressschweißens aufgebracht. Hierbei wird axial Kraft gewirkt und Strom durch Mutter und Werkstück geleitet. Der Widerstand an den Übergängen zwischen Mutter-Buckel und Werkstück sorgt für Wärme und verschweißt die Mutter so mit dem Werkstück. Die Buckel dienen dazu, eine möglichst kontrollierte Kontaktfläche zur Verfügung zu stellen und so gleichbleibende Prozesseigenschaften zu erzeugen. Im Gegensatz zur regulären Schweißmutter ist dieses Verfahren fast nur maschinell im Einsatz.",
       "ratings": [
         {
-          "name": "Spanbildung",
-          "score" : 1
-        },
-        {
-          "name": "Rüstzeit",
-          "score" : 2
-        },
-        {
-          "name": "Prozesssicherheit",
-          "score" : 3
-        },
-        {
           "name": "Automatisierbarkeit",
-          "score" : 4
-        },
-        {
-          "name": "Geschwindigkeit",
-          "score" : 1
-        },
-        {
-          "name": "Krafteinleitung",
-          "score" : 2
+          "score": 3
         },
         {
           "name": "Fremdelemente",
-          "score" : 3
+          "score": 3
         },
         {
-          "name": "Materialvielfalt",
-          "score" : 4
-        },
-        {
-          "name": "Oberflächenqualität",
-          "score" : 1
-        },
-        {
-          "name": "Wärmeeinleitung",
-          "score" : 2
-        },
-        {
-          "name": "Werkstückfixierung",
-          "score" : 3
-        },
-        {
-          "name": "Mobiler Einsatz",
-          "score" : 3
+          "name": "Geschwindigkeit",
+          "score": 4
         },
         {
           "name": "Gewindebelastbarkeit",
-          "score" : 2
+          "score": 2
         },
         {
-          "name": "Platzbedarf",
-          "score" : 1
+          "name": "Krafteinleitung",
+          "score": 2
         },
         {
           "name": "Massekosten",
-          "score" : 1
+          "score": 2
         },
         {
-          "name": "Vorarbeit",
-          "score" : 1
+          "name": "Materialvielfalt",
+          "score": 2
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score": 1
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score": 1
+        },
+        {
+          "name": "Platzbedarf",
+          "score": 2
         },
         {
           "name": "Positioniergenauigkeit",
-          "score" : 1
+          "score": 3
         },
         {
-          "name": "Toleranzen",
-          "score" : 1
+          "name": "Prozesssicherheit",
+          "score": 3
         },
         {
           "name": "Qualitätskontrolle",
-          "score" : 4
-        }     
+          "score": 2
+        },
+        {
+          "name": "Rüstzeit",
+          "score": 2
+        },
+        {
+          "name": "Spanbildung",
+          "score": 4
+        },
+        {
+          "name": "Toleranzen",
+          "score": 3
+        },
+        {
+          "name": "Vorarbeit",
+          "score": 2
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score": 2
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score": 2
+        }
       ]
-    },    {
+    },    
+    {
       "title": "Blindnietmuttern",
       "id": 5,
       "isActive": true,
-      "description": "The first process",
+      "description": "Blindnietmuttern gehören zu den Nieten. Der Niet wird durch ein vorher gefertigtes Loch eingebracht und mit einer Blindnietzange angezogen. Die resultierende Verformung bildet einen Formschluss.",
       "ratings": [
         {
-          "name": "Spanbildung",
-          "score" : 2
-        },
-        {
-          "name": "Rüstzeit",
-          "score" : 2
-        },
-        {
-          "name": "Prozesssicherheit",
-          "score" : 1
-        },
-        {
           "name": "Automatisierbarkeit",
-          "score" : 2
-        },
-        {
-          "name": "Geschwindigkeit",
-          "score" : 2
-        },
-        {
-          "name": "Krafteinleitung",
-          "score" : 2
+          "score": 2
         },
         {
           "name": "Fremdelemente",
-          "score" : 1
+          "score": 1
         },
         {
-          "name": "Materialvielfalt",
-          "score" : 4
-        },
-        {
-          "name": "Oberflächenqualität",
-          "score" : 3
-        },
-        {
-          "name": "Wärmeeinleitung",
-          "score" : 4
-        },
-        {
-          "name": "Werkstückfixierung",
-          "score" : 3
-        },
-        {
-          "name": "Mobiler Einsatz",
-          "score" : 4
+          "name": "Geschwindigkeit",
+          "score": 2
         },
         {
           "name": "Gewindebelastbarkeit",
-          "score" : 1
+          "score": 1
         },
         {
-          "name": "Platzbedarf",
-          "score" : 2
+          "name": "Krafteinleitung",
+          "score": 2
         },
         {
           "name": "Massekosten",
-          "score" : 3
+          "score": 1
         },
         {
-          "name": "Vorarbeit",
-          "score" : 4
+          "name": "Materialvielfalt",
+          "score": 4
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score": 4
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score": 3
+        },
+        {
+          "name": "Platzbedarf",
+          "score": 2
         },
         {
           "name": "Positioniergenauigkeit",
-          "score" : 2
+          "score": 2
         },
         {
-          "name": "Toleranzen",
-          "score" : 3
+          "name": "Prozesssicherheit",
+          "score": 2
         },
         {
           "name": "Qualitätskontrolle",
-          "score" : 4
+          "score": 2
+        },
+        {
+          "name": "Rüstzeit",
+          "score": 2
+        },
+        {
+          "name": "Spanbildung",
+          "score": 2
+        },
+        {
+          "name": "Toleranzen",
+          "score": 2
+        },
+        {
+          "name": "Vorarbeit",
+          "score": 3
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score": 4
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score": 4
         }
       ]
     },
@@ -423,201 +424,201 @@
       "title": "Gewindeschneiden",
       "id": 6,
       "isActive": true,
-      "description": "The first process",
+      "description": "Das konventionelle Gewindeschneiden sieht eine Kernlochbohrung vor, in die Mittels eines Gewindebohrers ein Gewinde eingeschnitten wird. Dies kann auch mehrstufig geschehen.  Bei dünnen Blechen werden die entstandenen Gewinde oft nicht den Anforderungen gerecht, da nur sehr wenige Gewindegänge zur Verfügung stehen.",
       "ratings": [
         {
-          "name": "Spanbildung",
-          "score" : 1
-        },
-        {
-          "name": "Rüstzeit",
-          "score" : 2
-        },
-        {
-          "name": "Prozesssicherheit",
-          "score" : 3
-        },
-        {
           "name": "Automatisierbarkeit",
-          "score" : 3
-        },
-        {
-          "name": "Geschwindigkeit",
-          "score" : 3
-        },
-        {
-          "name": "Krafteinleitung",
-          "score" : 1
+          "score": 3
         },
         {
           "name": "Fremdelemente",
-          "score" : 4
+          "score": 4
         },
         {
-          "name": "Materialvielfalt",
-          "score" : 4
-        },
-        {
-          "name": "Oberflächenqualität",
-          "score" : 4
-        },
-        {
-          "name": "Wärmeeinleitung",
-          "score" : 3
-        },
-        {
-          "name": "Werkstückfixierung",
-          "score" : 2
-        },
-        {
-          "name": "Mobiler Einsatz",
-          "score" : 3
+          "name": "Geschwindigkeit",
+          "score": 3
         },
         {
           "name": "Gewindebelastbarkeit",
-          "score" : 1
+          "score": 1
         },
         {
-          "name": "Platzbedarf",
-          "score" : 2
+          "name": "Krafteinleitung",
+          "score": 1
         },
         {
           "name": "Massekosten",
-          "score" : 3
+          "score": 3
         },
         {
-          "name": "Vorarbeit",
-          "score" : 2
+          "name": "Materialvielfalt",
+          "score": 4
+        },
+        {
+          "name": "Mobiler Einsatz",
+          "score": 3
+        },
+        {
+          "name": "Oberflächenqualität",
+          "score": 4
+        },
+        {
+          "name": "Platzbedarf",
+          "score": 2
         },
         {
           "name": "Positioniergenauigkeit",
-          "score" : 2
+          "score": 2
         },
         {
-          "name": "Toleranzen",
-          "score" : 1
+          "name": "Prozesssicherheit",
+          "score": 3
         },
         {
           "name": "Qualitätskontrolle",
-          "score" : 1
-        }       
+          "score": 1
+        },
+        {
+          "name": "Rüstzeit",
+          "score": 2
+        },
+        {
+          "name": "Spanbildung",
+          "score": 1
+        },
+        {
+          "name": "Toleranzen",
+          "score": 1
+        },
+        {
+          "name": "Vorarbeit",
+          "score": 2
+        },
+        {
+          "name": "Wärmeeinleitung",
+          "score": 3
+        },
+        {
+          "name": "Werkstückfixierung",
+          "score": 2
+        }
       ]
-    }                      
+    }
   ],
   "weights": [
     {
       "id": 1,
       "name": "Spanbildung",
       "weight": 1,
-      "description": "Die Bildung von Spänen während des Bearbeitungsprozesses."
+      "description": "Stellt den Grad an entstehendem Span dar. Zu beachten ist, dass wenn eine Lochbohrung vor verwenden des Prozesses erforderlich ist, folgend angenommen wird, dass diese spanend eingebracht wird."
     },
     {
       "id": 2,
       "name": "Rüstzeit",
       "weight": 2,
-      "description": "Die Zeit, die benötigt wird, um die Maschine für die Bearbeitung vorzubereiten."
+      "description": "Stellt die Zeit dar, die der Prozess zum rüsten, also der vor dem Prozess nötigen Vorbereitung, braucht. "
     },
     {
       "id": 3,
       "name": "Prozesssicherheit",
       "weight": 4,
-      "description": "Die Verlässlichkeit des Bearbeitungsprozesses, um Fertigungsfehler zu vermeiden."
+      "description": "Bezieht sich größtenteils auf die automatisierte Ausführung des Prozesses. Das Kriterium soll wiedergeben wie verlässlich ein Prozess ist und qualitativ den Anteil in i.O. Teilen darstellen."
     },
     {
       "id": 4,
       "name": "Automatisierbarkeit",
       "weight": 4,
-      "description": "Die Fähigkeit, den Bearbeitungsprozess zu automatisieren, um Effizienz zu steigern und Kosten zu senken."
+      "description": "Stellt die Durchführbarkeit und ökonomische Sinnhaftigkeit einer automatisierten Umsetzung des Prozesses dar."
     },
     {
       "id": 5,
       "name": "Geschwindigkeit",
       "weight": 4,
-      "description": "Die Geschwindigkeit, mit der der Bearbeitungsprozess durchgeführt wird."
+      "description": "Soll die Stück zu Stück Geschwindigkeit eines Prozesses in einer üblichen Anwendung qualitativ wiedergeben."
     },
     {
       "id": 6,
       "name": "Krafteinleitung",
       "weight": 3,
-      "description": "Die Art und Weise, wie die Bearbeitungskräfte auf das Werkstück übertragen werden."
+      "description": "Wie gut das entstandene Gewinde Kraft in das Werkstück einleiten kann."
     },
     {
       "id": 7,
       "name": "Fremdelemente",
       "weight": 2,
-      "description": "Die Notwendigkeit und der Kosteneinfluss, der durch Zusatzelemente entsteht (Muttern, Schweißmittel etc)."
+      "description": "Bezieht sich auf die Notwendigkeit und den Kosteneinfluss von Fremdelementen, die für den Prozess erforderlich sind."
     },
     {
       "id": 8,
       "name": "Materialvielfalt",
       "weight": 1,
-      "description": "Die Vielfalt der Materialien, die bearbeitet werden können."
+      "description": "Gibt qualitativ die Vielfalt der für den Prozess verwendbaren Materialien an."
     },
     {
       "id": 9,
       "name": "Oberflächenqualität",
-      "weight": 1,
-      "description": "Die Qualität der bearbeiteten Oberfläche des Werkstücks."
+      "weight": 3,
+      "description": "Gibt den Grad an Anforderung an die Oberflächenqualität der Werkstücks wieder, damit der Prozess wiederholungssicher eingesetzt werden kann." 
     },
     {
       "id": 10,
       "name": "Wärmeeinleitung",
-      "weight": 1,
-      "description": "Wie viel Wärme wird in das Werkstück eingeleitet (weniger Wärme -> höhere Wertung)."
+      "weight": 2,
+      "description": "Gibt das Maß an eingebrachter Wärme in das Werkstück wieder. Das Kriterium ist vor allem für Wärme- und oberflächenbehandelte Werkstücke relevant. Gleichmäßige Einbringung von Wärme wird positiver bewertet, als ungleichmäßige Einbringung, da diese leichter zum Verzug des Werkstücks führen kann."
     },
     {
       "id": 11,
       "name": "Werkstückfixierung",
       "weight": 1,
-      "description": "Wie gut das Werkstück fixiert werden muss"
+      "description": "Anforderungen an die Werkstückfixierung. Maß an Kraft, die während des Prozesses axial und radial eingebracht wird."
     },
     {
       "id": 12,
       "name": "Mobiler Einsatz",
-      "weight": 2,
-      "description": "Die Möglichkeit, den Prozess mobil einzusetzen."
+      "weight": 1,
+      "description": "Bewertet inwiefern der Prozess mobil einsetzbar ist."
     },
     {
       "id": 13,
       "name": "Gewindebelastbarkeit",
       "weight": 3,
-      "description": "Die Fähigkeit, Gewinde mit hoher Belastbarkeit herzustellen."
+      "description": "Soll qualitativ die Belastbarkeit des entstandenen Gewindes darstellen. Hierbei sollen sowohl Axial- als auch Scherbelastungen berücksichtigt werden."
     },
     {
       "id": 14,
       "name": "Platzbedarf",
       "weight": 2,
-      "description": "Der benötigte Raum für die Aufstellung der Bearbeitungsmaschine."
+      "description": "Gibt qualitativ den für die Einbringung des Gewindes benötigten Platzbedarf wieder. Eine Blindnietmutter benötigt beispielsweise deutlich mehr Raum als eine Buckelschweißmutter."
     },
     {
       "id": 15,
       "name": "Massekosten",
-      "weight": 1,
-      "description": "Die Masse, die durch den Prozess dem Werkstück hinzugefügt wird."
+      "weight": 2,
+      "description": "Wieviel Masse das Werkstück durch den Prozess hinzugewinnt, etwa durch Schweißmittel oder Fremdelemente."
     },
     {
       "id": 16,
       "name": "Vorarbeit",
       "weight": 3,
-      "description": "Die Menge an Vorarbeiten, die vor dem eigentlichen Bearbeitungsprozess erforderlich sind."
+      "description": "Stellt das Maß an erforderlicher Vorarbeit am Werkstück dar, bevor der eigentliche Prozess durchgeführt werden kann."
     },
     {
       "id": 17,
       "name": "Positioniergenauigkeit",
-      "weight": 2,
-      "description": "Die Genauigkeit, mit der das Gewinde positioniert wird."
+      "weight": 3,
+      "description": "Wie präzise positioniert kann das Gewinde im Werkstück wiederholgenau eingebracht werden."
     },
     {
       "id": 18,
       "name": "Toleranzen",
-      "weight": 2,
-      "description": "Die Einhaltbarkeit der von zulässigen Abweichungen von den vorgegebenen Maßen."
+      "weight": 4,
+      "description": "Stellt qualitativ dar, welche Tolerenzklasse mit dem Prozess wirtschaftlich sinnvoll erreichbar ist."
     },
     {
       "id": 19,
       "name": "Qualitätskontrolle",
-      "weight": 2,
-      "description": "Nötiger Prüfaufwand, um das Werkstück abnehmen zu können."
+      "weight": 3,
+      "description": "Das Maß an Aufwand und Investition, dass in die sachgemäße Qualitätskontrolle fließen muss."
     }
   ]
 }
