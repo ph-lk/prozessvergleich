@@ -1,8 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import ComparisonData from './types'; // Importing the interface
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,10 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input"
+import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
-import { Switch } from "@/components/ui/switch"
+import { Switch } from "@/components/ui/switch";
 import {
   Table,
   TableBody,
@@ -24,22 +21,18 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { toast } from "sonner"
-
-import { ResponsivePie } from '@nivo/pie'
-
+import { ResponsivePie } from '@nivo/pie';
+import { CopyIcon } from '@radix-ui/react-icons';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 import defaultComparisonValues from "../../public/data/defaults.json";
 import jsonSchema from "../../public/data/schema.json";
-import { ResultTable } from "./result-table/result-table";
 import { ProcessResult, columns } from "./result-table/result-columns";
-import { ReceiptEuro, RemoveFormatting, RemoveFormattingIcon } from 'lucide-react';
-import { useState, useEffect } from "react";
-import { ProcessData, Weight, Rating, Process } from "./types";
-
-import { useSearchParams } from 'next/navigation'
-import { CopyIcon } from '@radix-ui/react-icons'
+import { ResultTable } from "./result-table/result-table";
+import { ProcessData, Weight } from "./types";
 
 export default function Home() {
   const searchParams = useSearchParams()
@@ -221,7 +214,7 @@ export default function Home() {
           }
         }
     />
-)
+  )
 
 
   return (
@@ -322,14 +315,14 @@ export default function Home() {
                       { comparisonData.processes
                           .filter((process) => process.isActive)
                           .map((process) => {
-                            const rating : Rating = process.ratings.find((rating) => rating.name === weight.name);
-                            return <TableCell key={`${weight.id}-${rating.name}`}>
+                            const rating = process.ratings.find((rating) => rating.name === weight.name);
+                            return <TableCell key={`${weight.id}-${rating!.name}`}>
                               <Input
                                 type="number"
                                 min={0}
                                 step={0.2}
-                                value={rating.score}
-                                onChange={(inputEvent) => handleRatingChange(process.id, rating.name, inputEvent.target.value)}
+                                value={rating!.score}
+                                onChange={(inputEvent) => handleRatingChange(process.id, rating!.name, inputEvent.target.value)}
                                 style={{ width: "100%"}}
                               />
                             </TableCell>;
@@ -420,9 +413,9 @@ export default function Home() {
           </div>
         </TabsContent>
         <TabsContent value="results" className="p-8">
-          <div className="w-full h-[600px]">
+          <div className="w-full h-full">
             <ResultTable variant={"surface"} columns={columns} data={processResults} />
-          </div>  
+          </div>
         </TabsContent>
       </Tabs>
     </main>
