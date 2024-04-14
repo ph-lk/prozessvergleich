@@ -18,9 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        <nav>
-          <h1 className="text-center">Nutzwertanalyse</h1>
-        </nav>
         <main>{children}</main>
         <Toaster />
       </body>

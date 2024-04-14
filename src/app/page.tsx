@@ -293,7 +293,7 @@ export default function Home() {
             ))}
           </div>
           < Separator className="my-24" />
-          <div className="col-span-3" style={{ height: '90vh', width: '90vw' }}>
+          <div className="col-span-3" style={{ height: '80vh', width: '60vw' }}>
             { processResults ? <WeightingPieChart data={comparisonData.weights} /> : <></> }
           </div>
         </TabsContent>
