@@ -25,8 +25,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ResponsivePie } from '@nivo/pie';
 import { CopyIcon } from '@radix-ui/react-icons';
-import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { toast } from "sonner";
 import defaultComparisonValues from "../../public/data/defaults.json";
 import jsonSchema from "../../public/data/schema.json";
@@ -35,9 +34,12 @@ import { ResultTable } from "./result-table/result-table";
 import { ProcessData, Weight } from "./types";
 
 export default function Home() {
-  const searchParams = useSearchParams()
-  const dataParam = searchParams.get('data')
-  const importData = dataParam ? JSON.parse(dataParam) : null;
+  let importData;
+  <Suspense>
+    const searchParams = useSearchParams();
+    const dataParam = searchParams.get('data');
+    importData = dataParam ? JSON.parse(dataParam) : null;
+  </Suspense>
 
   const [comparisonData, setComparisonData] = useState<ProcessData>(importData || defaultComparisonValues)
   const [processResults, setProcessResults] = useState<ProcessResult[]>();
@@ -414,7 +416,7 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="results" className="p-8">
           <div className="w-full h-full">
-            <ResultTable variant={"surface"} columns={columns} data={processResults} />
+            { processResults ? <ResultTable columns={columns} data={processResults} /> : <></> }
           </div>
         </TabsContent>
       </Tabs>
