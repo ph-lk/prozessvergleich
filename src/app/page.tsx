@@ -37,7 +37,7 @@ import { ProcessData, Weight } from "./types";
 export default function Home() {
   const searchParams = useSearchParams();
   const dataParam = searchParams.get('data');
-  const importData = JSON.parse(dataParam);
+  const importData = dataParam ? JSON.parse(dataParam) : null;
 
   const [comparisonData, setComparisonData] = useState<ProcessData>(importData || defaultComparisonValues)
   const [processResults, setProcessResults] = useState<ProcessResult[]>();
