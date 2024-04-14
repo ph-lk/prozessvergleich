@@ -1,24 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Process comparison
 
-## Getting Started
+This project is a web-based application for process comparison analysis. It allows users to evaluate and compare different processes based on defined criteria. The application language is german.
 
-First, run the development server:
+## Live Dev-Build
 
-```bash
-npm run dev
-```
+I will host the current build at [klch.eu](https://klch.eu/) for a while. Head over to check it out!
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository using `git clone https://github.com/ph-lk/prozessvergleich.git`.
+2. Navigate to the project directory using `cd prozessvergleich`.
+3. Install dependencies using `npm install`.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+1. Run the project using `npm start`.
+2. Open your browser and navigate to `http://localhost:3000`.
+3. Start using the application.
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Processes**: Displays a list of available processes and allows users to activate or deactivate individual processes.
+- **Weighting**: Enables users to set the weighting of different criteria to be used for comparing the processes.
+- **Rating**: Allows users to input ratings for each criterion for each process.
+- **Import / Export**: Provides the ability to import and export data to facilitate comparison between different users or sessions.
+- **Analysis**: Shows a an analysis of the compared processes based on the set weightings and ratings.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Technologies
+
+- **React**: A JavaScript library for building user interfaces.
+- **Next.js**: A React framework for developing server-side rendered web applications.
+- **shadcn**: Customizable UI Components
+- **Nivo**: Graphing library
+- **Others**: Other technologies and libraries used are listed in the source code comments and dependencies.
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+## Contact
+
+For questions or suggestions, you can create an issue under https://github.com/ph-lk/prozessvergleich/issues
