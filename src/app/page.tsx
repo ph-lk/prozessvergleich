@@ -26,26 +26,32 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { toast } from "sonner"
 
 import { ResponsivePie } from '@nivo/pie'
 
 import defaultComparisonValues from "../../public/data/defaults.json";
+import jsonSchema from "../../public/data/schema.json";
 import { ResultTable } from "./result-table/result-table";
 import { ProcessResult, columns } from "./result-table/result-columns";
 import { ReceiptEuro, RemoveFormatting, RemoveFormattingIcon } from 'lucide-react';
 import { useState, useEffect } from "react";
-import { ProcessData, Weight, Rating } from "./types";
+import { ProcessData, Weight, Rating, Process } from "./types";
 
 import { useSearchParams } from 'next/navigation'
+import { CopyIcon } from '@radix-ui/react-icons'
 
 export default function Home() {
   const searchParams = useSearchParams()
-  const importData = searchParams.get('data')
+  const dataParam = searchParams.get('data')
+  const importData = dataParam ? JSON.parse(dataParam) : null;
 
   const [comparisonData, setComparisonData] = useState<ProcessData>(importData || defaultComparisonValues)
   const [processResults, setProcessResults] = useState<ProcessResult[]>();
   const [weightSliderValues, setWeightSliderValues] = useState<number[]>();
   const [maxWeight, setMaxWeight] = useState<number>(5);
+  const [clientUrl, setClientUrl] = useState<string>("unknown");
+  const [exportUrl, setExportUrl] = useState<string>("");
 
   const handleActiveSwitch = (processId: number, isActive: boolean) => {
     const updatedProcesses = comparisonData.processes.map(process => {
@@ -76,8 +82,6 @@ export default function Home() {
       ...prevData,
       weights: updatedWeights
     }));
-
-    console.log(`Changed weight ${weightId} to ${weight}`);
   }
 
   const handleRatingChange = (processId: number, ratingName: string, scoreStr: string) => {
@@ -102,7 +106,6 @@ export default function Home() {
     }));
   }
 
-  // updating the calculations for the charts & update ui elements
   useEffect(() => {
     setWeightSliderValues(() => {
       const weights : number[] = [];
@@ -146,8 +149,15 @@ export default function Home() {
       return results
     });
 
-    // TODO update charts?
+    setExportUrl(`${clientUrl}?data=${JSON.stringify(comparisonData)}`);
   }, [comparisonData]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setClientUrl(`${window.location.protocol}//${window.location.host}/` );
+      setExportUrl(`${window.location.protocol}//${window.location.host}/?data=${JSON.stringify(comparisonData)}`);
+    }
+  }, []);
 
   const WeightingPieChart = (inputData : any) => (
     <ResponsivePie
@@ -291,12 +301,12 @@ export default function Home() {
           <Table>
             <TableCaption>Zusammenfassung der Bewertungen</TableCaption>
             <TableHeader>
-              <TableRow>
-                <TableHead className="w-[100px]">Kriterium</TableHead>
+              <TableRow key="rating-header">
+                <TableHead key="head-criteria" className="w-[100px]">Kriterium</TableHead>
                 { comparisonData.processes
                     .filter((process) => process.isActive)
                     .map((process) => (
-                      <TableHead>
+                      <TableHead key={`head-${process.id}`}>
                         {process.title}
                       </TableHead>
                     ))
@@ -307,13 +317,13 @@ export default function Home() {
             <TableBody>
               { comparisonData.weights
                   .map((weight) => (
-                    <TableRow>
-                      <TableCell>{weight.name}</TableCell>
+                    <TableRow key={weight.id}>
+                      <TableCell key={"rating-title"}>{weight.name}</TableCell>
                       { comparisonData.processes
                           .filter((process) => process.isActive)
                           .map((process) => {
                             const rating : Rating = process.ratings.find((rating) => rating.name === weight.name);
-                            return <TableCell>
+                            return <TableCell key={`${weight.id}-${rating.name}`}>
                               <Input
                                 type="number"
                                 min={0}
@@ -336,26 +346,75 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <CardTitle>Import</CardTitle>
-                <CardDescription>Description</CardDescription>
+                <CardDescription>Daten können über den data URL-Parameter importiert werden. In der Export-Sektion ist ein aktueller Link enthalten. Im Data Parameter wird eine JSON mit den aktuellen Prozessdaten gepackt. die JSON muss folgendem Schema entsprechen.</CardDescription>
               </CardHeader>
               <CardContent>
-                Content
+                <Input
+                  type="text"
+                  value={JSON.stringify(jsonSchema)}
+                  onFocus={(input => input.currentTarget.setSelectionRange(0, Number.MAX_SAFE_INTEGER))}
+                  onClick={(input => input.currentTarget.setSelectionRange(0, Number.MAX_SAFE_INTEGER))}
+                />
+                <Button 
+                  variant="secondary" 
+                  className="my-4"
+                  onClick={() => {
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                      navigator.clipboard.writeText(exportUrl)
+                      .then(() => {
+                        // If successful, show a success message to the user
+                        toast("Erfolgreich in Zwischenablage kopiert.");
+                      })
+                      .catch((error) => {
+                        // If an error occurs, handle it appropriately
+                        console.error('Error copying to clipboard:', error);
+                        // Optionally, show an error message to the user
+                        toast("Fehler beim Kopieren in die Zwischenablage aufgetreten. Bitte manuell kopieren.");
+                      });
+                    } else {
+                      toast("Browser bietet keinen Clipboard-context. Http wird in der Regel nicht unterstützt.");
+                    }
+                  }}
+                >
+                 <CopyIcon className="mr-2 h-4 w-4" /> Ins Clipboard kopieren
+                </Button>
               </CardContent>
-              <CardFooter>
-                Footer
-                Right
-              </CardFooter>
             </Card>
             <Card>
               <CardHeader>
                 <CardTitle>Export</CardTitle>
-                <CardDescription>Diese URL enthällt den aktuellen Stand der Anwendung.</CardDescription>
+                <CardDescription>Diese URL enthält den aktuellen Stand der Anwendung. Teilen Sie sie mit anderen oder kopieren Sie sie ins Adressfeld Ihres Browsers, um den aktuellen Stand abzurufen.</CardDescription>
               </CardHeader>
               <CardContent>
                 <Input
                   type="url"
-                  value="asdf"
+                  value={exportUrl}
+                  onFocus={(input => input.currentTarget.setSelectionRange(0, Number.MAX_SAFE_INTEGER))}
+                  onClick={(input => input.currentTarget.setSelectionRange(0, Number.MAX_SAFE_INTEGER))}
                 />
+                <Button 
+                  variant="secondary" 
+                  className="my-4"
+                  onClick={() => {
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                      navigator.clipboard.writeText(exportUrl)
+                      .then(() => {
+                        // If successful, show a success message to the user
+                        toast("Erfolgreich in Zwischenablage kopiert.");
+                      })
+                      .catch((error) => {
+                        // If an error occurs, handle it appropriately
+                        console.error('Error copying to clipboard:', error);
+                        // Optionally, show an error message to the user
+                        toast("Fehler beim Kopieren in die Zwischenablage aufgetreten. Bitte manuell kopieren.");
+                      });
+                    } else {
+                      toast("Browser bietet keinen Clipboard-context. Http wird in der Regel nicht unterstützt.");
+                    }
+                  }}
+                >
+                 <CopyIcon className="mr-2 h-4 w-4" /> Ins Clipboard kopieren
+                </Button>
               </CardContent>
             </Card>
           </div>

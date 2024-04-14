@@ -1,16 +1,16 @@
-interface Rating {
+export interface Rating {
   "name": string,
   "score": number,
 }
 
-interface Weight {
+export interface Weight {
   "id": number,
   "name": string,
   "weight": number,
   "description": string,
 }
 
-interface Process {
+export interface Process {
     title: string,
     id: number,
     isActive: boolean,
@@ -18,9 +18,7 @@ interface Process {
     ratings: Rating[],
 }
   
-interface ProcessData {
+export interface ProcessData {
     processes: Process[],
     weights: Weight[],
 }
-
-export default ProcessData;
