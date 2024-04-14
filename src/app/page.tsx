@@ -37,7 +37,9 @@ import { ProcessData, Weight } from "./types";
 export default function Home() {
   const searchParams = useSearchParams();
   const dataParam = searchParams.get('data');
+  if (dataParam) console.log(`Found data param with this -> ${dataParam}`);
   const importData = dataParam ? JSON.parse(dataParam) : null;
+  if (importData) console.log(`Parsed json, trying to import.`);
 
   const [comparisonData, setComparisonData] = useState<ProcessData>(importData || defaultComparisonValues)
   const [processResults, setProcessResults] = useState<ProcessResult[]>();
@@ -230,7 +232,7 @@ export default function Home() {
         <TabsContent value="processes" className="p-8">
           <div className="grid grid-cols-3 gap-8">
             {comparisonData.processes.map((process, index) => (
-              <Card key={process.id} className="flex flex-col justify-between">
+              <Card key={`process-${process.id}`} className="flex flex-col justify-between">
                 <CardHeader className="flex-row gap-4 items-center">
                   <div>
                     <CardTitle>{process.title}</CardTitle>
@@ -254,7 +256,7 @@ export default function Home() {
         <TabsContent value="weighting" className="p-8">
           <div className="grid grid-cols-3 gap-8 mx-auto">
             {comparisonData.weights.map((weight, index) => (
-              <Card key={weight.id} className="flex flex-col justify-between" >
+              <Card key={`weight-${(weight.id)}`} className="flex flex-col justify-between" >
                 <CardHeader className="flex-row gap-4 items-center">
                   <div>
                     <CardTitle>{weight.name}</CardTitle>
@@ -310,13 +312,13 @@ export default function Home() {
             <TableBody>
               { comparisonData.weights
                   .map((weight) => (
-                    <TableRow key={weight.id}>
+                    <TableRow key={`tb-weight-${weight.id}`}>
                       <TableCell key={"rating-title"}>{weight.name}</TableCell>
                       { comparisonData.processes
                           .filter((process) => process.isActive)
                           .map((process) => {
                             const rating = process.ratings.find((rating) => rating.name === weight.name);
-                            return <TableCell key={`${weight.id}-${rating!.name}`}>
+                            return <TableCell key={`${process.title}-${weight.id}-${rating!.name}`}>
                               <Input
                                 type="number"
                                 min={0}
@@ -343,6 +345,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <Input
+                  readOnly
                   type="text"
                   value={JSON.stringify(jsonSchema)}
                   onFocus={(input => input.currentTarget.setSelectionRange(0, Number.MAX_SAFE_INTEGER))}
@@ -356,16 +359,16 @@ export default function Home() {
                       navigator.clipboard.writeText(exportUrl)
                       .then(() => {
                         // If successful, show a success message to the user
-                        toast("Erfolgreich in Zwischenablage kopiert.");
+                        toast.success("Erfolgreich in Zwischenablage kopiert.");
                       })
                       .catch((error) => {
                         // If an error occurs, handle it appropriately
                         console.error('Error copying to clipboard:', error);
                         // Optionally, show an error message to the user
-                        toast("Fehler beim Kopieren in die Zwischenablage aufgetreten. Bitte manuell kopieren.");
+                        toast.error("Fehler beim Kopieren in die Zwischenablage aufgetreten. Bitte manuell kopieren.");
                       });
                     } else {
-                      toast("Browser bietet keinen Clipboard-context. Http wird in der Regel nicht unterstützt.");
+                      toast.error("Browser bietet keinen Clipboard-context. Http wird in der Regel nicht unterstützt.");
                     }
                   }}
                 >
@@ -380,6 +383,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <Input
+                  readOnly
                   type="url"
                   value={exportUrl}
                   onFocus={(input => input.currentTarget.setSelectionRange(0, Number.MAX_SAFE_INTEGER))}
@@ -393,16 +397,16 @@ export default function Home() {
                       navigator.clipboard.writeText(exportUrl)
                       .then(() => {
                         // If successful, show a success message to the user
-                        toast("Erfolgreich in Zwischenablage kopiert.");
+                        toast.success("Erfolgreich in Zwischenablage kopiert.");
                       })
                       .catch((error) => {
                         // If an error occurs, handle it appropriately
                         console.error('Error copying to clipboard:', error);
                         // Optionally, show an error message to the user
-                        toast("Fehler beim Kopieren in die Zwischenablage aufgetreten. Bitte manuell kopieren.");
+                        toast.error("Fehler beim Kopieren in die Zwischenablage aufgetreten. Bitte manuell kopieren.");
                       });
                     } else {
-                      toast("Browser bietet keinen Clipboard-context. Http wird in der Regel nicht unterstützt.");
+                      toast.error("Browser bietet keinen Clipboard-context. Http wird in der Regel nicht unterstützt.");
                     }
                   }}
                 >
