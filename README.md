@@ -26,6 +26,12 @@ I will host the current build at [klch.eu](https://klch.eu/) for a while. Head o
 - **Import / Export**: Provides the ability to import and export data to facilitate comparison between different users or sessions.
 - **Analysis**: Shows a an analysis of the compared processes based on the set weightings and ratings.
 
+## Data
+
+- all of the comparison data used in this project is fully interchangeable
+- check [/public/data](https://github.com/ph-lk/prozessvergleich/tree/main) for the defaults as well as the json schema to feed in different data
+- data import is done via the ?data url parameter. check the import / export page of the application for more information
+
 ## Technologies
 
 - **React**: A JavaScript library for building user interfaces.
