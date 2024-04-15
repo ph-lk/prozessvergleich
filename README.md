@@ -29,7 +29,7 @@ I will host the current build at [klch.eu](https://klch.eu/) for a while. Head o
 ## Data
 
 - all of the comparison data used in this project is fully interchangeable
-- check [/public/data](https://github.com/ph-lk/prozessvergleich/tree/main) for the defaults as well as the json schema to feed in different data
+- check [/public/data](https://github.com/ph-lk/prozessvergleich/tree/main/public/data) for the defaults as well as the json schema to feed in different data
 - data import is done via the ?data url parameter. check the import / export page of the application for more information
 
 ## Technologies
