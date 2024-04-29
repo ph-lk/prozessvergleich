@@ -4,7 +4,7 @@ This project is a web-based application for process comparison analysis. It allo
 
 ## Live Dev-Build
 
-I will host the current build at [klch.eu](https://klch.eu/) for a while. Head over to check it out!
+~~I will host the current build at [klch.eu](https://klch.eu/) for a while. Head over to check it out!~~
 
 ## Installation
 
