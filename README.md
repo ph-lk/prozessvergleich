@@ -4,19 +4,23 @@ This project is a web-based application for process comparison analysis. It allo
 
 ## Live Dev-Build
 
-~~I will host the current build at [klch.eu](https://klch.eu/) for a while. Head over to check it out!~~
+I will host the current build at [klch.eu](https://klch.eu/) for a while. Head over to check it out!
 
 ## Installation
 
-1. Clone the repository using `git clone https://github.com/ph-lk/prozessvergleich.git`.
+1. [git](https://git-scm.com/downloads) - Clone the repository using `git clone https://github.com/ph-lk/prozessvergleich.git`.
 2. Navigate to the project directory using `cd prozessvergleich`.
-3. Install dependencies using `npm install`.
+3. [node](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) - Install dependencies using `npm install`.
 
 ## Usage
 
-1. Run the project using `npm start`.
+1. Run the project using `npm run dev`.
 2. Open your browser and navigate to `http://localhost:3000`.
 3. Start using the application.
+
+## Hosting
+
+I hosted this project using [Nginx](https://www.nginx.com/), [Let's Encrypt](https://letsencrypt.org/) and [PM2](https://pm2.keymetrics.io/).
 
 ## Features
 
